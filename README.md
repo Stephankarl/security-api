@@ -10,7 +10,7 @@ Setup environment
 
 --UI
 1. Open a new terminal at the same root folder of the project
-2. $ git clone https://github.com/Stephankarl/security_ui.git
-3. $ cd security_ui
+2. $ git clone https://github.com/Stephankarl/security-ui.git
+3. $ cd security-ui
 4. $ npm i
 5. $ npm start
