@@ -14,8 +14,13 @@ app.get('/api', (req, res) => {
 })
 
 app.post('/api', (req, res) => {
-    dataHandle.update(req.body)
-    res.send(req.body)
+    const prevState = dataHandle.get()
+    const updatedState = {
+        ...prevState,
+       [Object.keys(req.body)[0]]: req.body[Object.keys(req.body)[0]]
+    }
+    dataHandle.update(updatedState)
+    res.send(updatedState)
 })
 
 app.listen(3001, () => console.log('Listening on 3001'))

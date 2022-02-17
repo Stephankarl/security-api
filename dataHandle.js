@@ -1,5 +1,5 @@
 const fs = require('fs')
-const dataPath = './data.json'
+const dataPath = './Control.json'
 
 class Data {
     get() {
@@ -13,10 +13,7 @@ class Data {
 
     store(data) {
         const rawdata = JSON.stringify(data, null, 2);
-        fs.writeFile(dataPath, rawdata, (err) => {
-            if (err) throw err;
-            console.log('Data saved');
-        });
+        fs.writeFileSync(dataPath, rawdata);
     }
 }
 
